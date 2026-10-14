@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070914">
+<meta name="description" content="Website sekolah modern dan kreatif">
+<title>NEXORA EDUCATION | Sekolah Masa Depan</title>
+
+<style>
+:root {
+  --bg: #070914;
+  --card: #101427;
+  --cyan: #00f5ff;
+  --purple: #a855f7;
+  --pink: #ff39c6;
+  --white: #f5f7ff;
+  --muted: #a4acc5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-alt {
+  background: #0b1020;
+  border-block: 1px solid #a855f71a;
+}
+
+.accent {
+  color: var(--cyan);
+}
+
+.gradient-text {
+  color: var(--cyan);
+  background: linear-gradient(90deg, var(--cyan), #a78bfa, var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* BACKGROUND */
+.background-glow {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-one {
+  background: var(--cyan);
+  top: 10%;
+  left: -130px;
+}
+
+.glow-two {
+  background: var(--purple);
+  right: -130px;
+  top: 55%;
+}
+
+/* NAVBAR */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 9, 20, .92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #00f5ff30;
+}
+
+.navbar {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--bg);
+  background: var(--cyan);
+  border-radius: 9px;
+  box-shadow: 0 0 20px #00f5ff55;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--muted);
+  font-size: 13px;
+  transition: .3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--cyan);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #00f5ff44;
+  color: var(--cyan);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: #070914;
+  box-shadow: 0 0 20px #00f5ff25;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 28px #00f5ff70;
+}
+
+.btn-outline {
+  border-color: #ffffff35;
+}
+
+.btn-outline:hover {
+  border-color: var(--purple);
+  color: #d8b4fe;
+  transform: translateY(-3px);
+}
+
+.btn-small {
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+/* HERO */
+.hero {
+  min-height: min(790px, calc(100svh - 75px));
+  display: flex;
+  align-items: center;
+  padding: 75px 0 100px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 13px;
+  border: 1px solid #00f5ff35;
+  border-radius: 30px;
+  background: #00f5ff0b;
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 23px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+  animation: pulse 1.8s infinite;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.16;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero-description {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 28px;
+}
+
+.hero-note span {
+  color: var(--pink);
+  margin-right: 8px;
+}
+
+/* NEON SCHOOL VISUAL */
+.hero-visual {
+  min-height: 420px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.school-card {
+  width: min(100%, 350px);
+  min-height: 330px;
+  padding: 28px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #00f5ff70;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #142638, #101126 60%, #24102e);
+  box-shadow: 0 0 35px #00f5ff20, inset 0 0 35px #a855f710;
+  animation: float 5s ease-in-out infinite;
+}
+
+.school-card::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: scan 4s linear infinite;
+}
+
+.school-symbol {
+  width: 155px;
+  height: 155px;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  color: var(--cyan);
+  font-size: 95px;
+  font-weight: 900;
+  text-shadow: 0 0 30px var(--cyan);
+  box-shadow: 0 0 30px #00f5ff24, inset 0 0 25px #00f5ff12;
+}
+
+.school-lines {
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink), transparent);
+  box-shadow: 0 0 15px #00f5ff55;
+}
+
+.school-caption {
+  display: grid;
+  gap: 4px;
+}
+
+.school-caption span {
+  color: var(--cyan);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.school-caption strong {
+  font-size: 16px;
+}
+
+.orbit {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid #a855f744;
+  border-radius: 50%;
+  animation: rotate-orbit 18s linear infinite;
+}
+
+.orbit-two {
+  width: 330px;
+  height: 410px;
+  border-color: #00f5ff35;
+  animation-direction: reverse;
+}
+
+.floating-chip {
+  position: absolute;
+  z-index: 3;
+  padding: 10px 15px;
+  border: 1px solid #ffffff25;
+  border-radius: 10px;
+  background: #11172a;
+  font-size: 12px;
+  box-shadow: 0 8px 25px #0005;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-chip span {
+  color: var(--cyan);
+}
+
+.chip-top {
+  top: 35px;
+  right: -8px;
+}
+
+.chip-bottom {
+  bottom: 35px;
+  left: -10px;
+  animation-direction: reverse;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+  max-width: 680px;
+  text-align: center;
+  margin: 0 auto 45px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2,
+.contact-panel h2 {
+  font-size: clamp(28px, 4vw, 43px);
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.section-heading p,
+.contact-panel > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* PROFILE CARDS */
+.profile-grid,
+.program-grid,
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.info-card,
+.program-card {
+  padding: 27px;
+  border: 1px solid #ffffff15;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #12182c, #0c1020);
+  transition: .3s ease;
+}
+
+.info-card:hover,
+.program-card:hover {
+  transform: translateY(-7px);
+  border-color: #00f5ff80;
+  box-shadow: 0 0 30px #00f5ff12;
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  background: #00f5ff0d;
+  border: 1px solid #00f5ff35;
+  border-radius: 12px;
+  font-size: 26px;
+}
+
+.info-card h3,
+.program-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.info-card p,
+.program-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* PROGRAMS */
+.program-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.program-number {
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.program-icon {
+  font-size: 35px;
+  margin: 24px 0 14px;
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--cyan);
+  font-size: 12px;
+  margin-top: 22px;
+}
+
+/* ACTIVITIES */
+.activity-card {
+  overflow: hidden;
+  border: 1px solid #ffffff17;
+  border-radius: 16px;
+  background: var(--card);
+  transition: .3s;
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+}
+
+.activity-art {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  font-size: 75px;
+  background: linear-gradient(135deg, #0b2534, #11152c);
+  transition: .3s;
+}
+
+.activity-card:hover .activity-art {
+  transform: scale(1.04);
+}
+
+.activity-purple .activity-art {
+  background: linear-gradient(135deg, #281442, #12152c);
+}
+
+.activity-pink .activity-art {
+  background: linear-gradient(135deg, #35152f, #171126);
+}
+
+.activity-info {
+  padding: 22px;
+}
+
+.activity-info > span {
+  color: var(--cyan);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.activity-purple .activity-info > span {
+  color: #c084fc;
+}
+
+.activity-pink .activity-info > span {
+  color: var(--pink);
+}
+
+.activity-info h3 {
+  font-size: 17px;
+  margin: 6px 0;
+}
+
+.activity-info p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* CONTACT */
+.contact-panel {
+  max-width: 820px;
+  margin: auto;
+  padding: 50px 30px;
+  text-align: center;
+  border: 1px solid #00f5ff35;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at top, #15233a, transparent 70%), #0d1224;
+  box-shadow: inset 0 0 50px #00f5ff05;
+}
+
+.contact-panel > p {
+  max-width: 550px;
+  margin: 0 auto 25px;
+}
+
+.contact-detail {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 28px;
+  color: #909bb8;
+  font-size: 11px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 25px 0;
+  background: #060812;
+  border-top: 1px solid #ffffff12;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer .logo {
+  font-size: 17px;
+}
+
+.footer .logo-icon {
+  width: 29px;
+  height: 29px;
+}
+
+.footer p,
+.back-top {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.back-top:hover {
+  color: var(--cyan);
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* KEYFRAMES */
+@keyframes pulse {
+  50% {
+    opacity: .4;
+    box-shadow: 0 0 3px var(--cyan);
+  }
+}
+
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+@keyframes scan {
+  from { transform: translateY(0); }
+  to { transform: translateY(330px); }
+}
+
+@keyframes rotate-orbit {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+/* RESPONSIVE HP DAN TABLET */
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 13px;
+  }
+
+  .nav-menu a {
+    font-size: 12px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hero-grid {
+    gap: 22px;
+  }
+
+  .hero-visual {
+    transform: scale(.9);
+  }
+
+  .info-card,
+  .program-card {
+    padding: 20px;
+  }
+
+  .profile-grid,
+  .program-grid,
+  .activity-grid {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .navbar {
+    min-height: 68px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding: 8px 0 15px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 65px 0 80px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 53px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+    transform: none;
+  }
+
+  .school-card {
+    width: min(82%, 320px);
+    min-height: 300px;
+  }
+
+  .school-symbol {
+    width: 130px;
+    height: 130px;
+    font-size: 78px;
+  }
+
+  .orbit {
+    width: 310px;
+    height: 310px;
+  }
+
+  .orbit-two {
+    width: 280px;
+    height: 340px;
+  }
+
+  .chip-top { right: 0; }
+  .chip-bottom { left: 0; }
+
+  .profile-grid,
+  .program-grid,
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .activity-art {
+    min-height: 160px;
+  }
+
+  .contact-panel {
+    padding: 38px 18px;
+  }
+
+  .contact-detail {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* AKSESIBILITAS */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+<header class="header">
+  <nav class="navbar container">
+    <a href="#home" class="logo">
+      <span class="logo-icon">N</span>
+      NEXORA<span class="accent">.</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Buka navigasi" aria-expanded="false"
+      aria-controls="navMenu">☰</button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#kegiatan">Kegiatan</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+
+    <a href="#kontak" class="btn btn-small btn-outline nav-cta">
+      Hubungi Kami ↗
+    </a>
+  </nav>
+</header>
+
+<main>
+  <!-- BERANDA -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="status-label">
+          <span class="status-dot"></span>
+          PENDIDIKAN UNTUK MASA DEPAN
+        </div>
+
+        <h1>
+          Belajar Hari Ini,<br>
+          Menjadi <span class="gradient-text">Luar Biasa.</span>
+        </h1>
+
+        <p class="hero-description">
+          Membangun generasi berilmu, berkarakter, kreatif,
+          dan siap menghadapi tantangan masa depan.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#profil" class="btn btn-primary">Jelajahi Sekolah ↗</a>
+          <a href="#program" class="btn btn-outline">Lihat Program</a>
+        </div>
+
+        <p class="hero-note">
+          <span>✦</span> Tempat tumbuhnya potensi dan prestasi.
+        </p>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="orbit"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="school-card">
+          <div class="school-symbol">N</div>
+          <div class="school-lines"></div>
+          <div class="school-caption">
+            <span>LEARN · GROW · ACHIEVE</span>
+            <strong>Masa Depan Dimulai Di Sini.</strong>
+          </div>
+        </div>
+
+        <div class="floating-chip chip-top"><span>✦</span> Kreativitas</div>
+        <div class="floating-chip chip-bottom"><span>⌘</span> Teknologi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL -->
+  <section class="section" id="profil">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">TENTANG KAMI</span>
+        <h2>Lebih dari Sekadar <span class="gradient-text">Sekolah.</span></h2>
+        <p>Lingkungan belajar yang mendorong siswa untuk berpikir,
+          berkarya, dan berkembang menjadi pribadi yang unggul.</p>
+      </div>
+
+      <div class="profile-grid">
+        <article class="info-card reveal">
+          <div class="card-icon">🎯</div>
+          <h3>Visi Kami</h3>
+          <p>Menjadi lembaga pendidikan yang unggul dalam ilmu pengetahuan,
+            karakter, dan inovasi.</p>
+        </article>
+
+        <article class="info-card reveal">
+          <div class="card-icon">🧭</div>
+          <h3>Misi Kami</h3>
+          <p>Mengembangkan pembelajaran berkualitas, membangun kedisiplinan,
+            dan menumbuhkan kreativitas siswa.</p>
+        </article>
+
+        <article class="info-card reveal">
+          <div class="card-icon">🤝</div>
+          <h3>Nilai Kami</h3>
+          <p>Integritas, tanggung jawab, kolaborasi, rasa hormat,
+            dan semangat belajar sepanjang hayat.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="section section-alt" id="program">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">PROGRAM PENDIDIKAN</span>
+        <h2>Temukan Potensi, <span class="gradient-text">Raih Prestasi.</span></h2>
+        <p>Beragam bidang untuk mengembangkan kemampuan dan minat siswa.</p>
+      </div>
+
+      <div class="program-grid">
+        <article class="program-card reveal">
+          <span class="program-number">01 / AKADEMIK</span>
+          <div class="program-icon">📚</div>
+          <h3>Akademik Unggulan</h3>
+          <p>Menguatkan fondasi ilmu, kemampuan berpikir kritis,
+            dan pemecahan masalah.</p>
+          <a href="#kontak" class="text-link">Pelajari lebih lanjut ↗</a>
+        </article>
+
+        <article class="program-card reveal">
+          <span class="program-number">02 / TEKNOLOGI</span>
+          <div class="program-icon">💻</div>
+          <h3>Teknologi Digital</h3>
+          <p>Mengenal pemrograman, literasi digital, dan kreativitas
+            di era teknologi.</p>
+          <a href="#kontak" class="text-link">Pelajari lebih lanjut ↗</a>
+        </article>
+
+        <article class="program-card reveal">
+          <span class="program-number">03 / KARAKTER</span>
+          <div class="program-icon">🌱</div>
+          <h3>Karakter & Kepemimpinan</h3>
+          <p>Menumbuhkan disiplin, empati, tanggung jawab,
+            dan jiwa kepemimpinan.</p>
+          <a href="#kontak" class="text-link">Pelajari lebih lanjut ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEGIATAN -->
+  <section class="section" id="kegiatan">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">KEHIDUPAN SEKOLAH</span>
+        <h2>Belajar, Berkarya, <span class="gradient-text">Bersama.</span></h2>
+        <p>Contoh kegiatan yang dapat ditampilkan di website sekolah.</p>
+      </div>
+
+      <div class="activity-grid">
+        <article class="activity-card reveal">
+          <div class="activity-art">🔬</div>
+          <div class="activity-info">
+            <span>EKSPERIMEN</span>
+            <h3>Laboratorium Kreatif</h3>
+            <p>Belajar melalui eksplorasi dan praktik.</p>
+          </div>
+        </article>
+
+        <article class="activity-card activity-purple reveal">
+          <div class="activity-art">🎨</div>
+          <div class="activity-info">
+            <span>KREATIVITAS</span>
+            <h3>Seni & Budaya</h3>
+            <p>Mengembangkan bakat dan ekspresi diri.</p>
+          </div>
+        </article>
+
+        <article class="activity-card activity-pink reveal">
+          <div class="activity-art">🏆</div>
+          <div class="activity-info">
+            <span>PRESTASI</span>
+            <h3>Kompetisi Siswa</h3>
+            <p>Melatih keberanian dan semangat berkompetisi.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="section section-alt" id="kontak">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <span class="eyebrow">MARI BERGABUNG</span>
+        <h2>Masa Depanmu Dimulai <span class="gradient-text">Sekarang.</span></h2>
+        <p>Ingin mengetahui informasi pendaftaran atau program pendidikan?
+          Hubungi pihak sekolah untuk mendapatkan informasi lebih lanjut.</p>
+
+        <a href="mailto:info@sekolahmu.sch.id" class="btn btn-primary">
+          Hubungi Sekolah ↗
+        </a>
+
+        <div class="contact-detail">
+          <span>✉ info@sekolahmu.sch.id</span>
+          <span>⌖ Alamat sekolah, kota Anda</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#home" class="logo">
+      <span class="logo-icon">N</span>
+      NEXORA<span class="accent">.</span>
+    </a>
+
+    <p>© <span id="currentYear"></span> NEXORA EDUCATION. Hak cipta dilindungi.</p>
+    <a href="#home" class="back-top">Kembali ke atas ↑</a>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  // Menu navigasi HP
+  menuToggle.addEventListener("click", function () {
+    const isOpen = navMenu.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Tutup navigasi" : "Buka navigasi"
+    );
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Tutup menu setelah tautan dipilih
+  navMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Buka navigasi");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Tahun otomatis
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+  // Animasi elemen saat masuk ke layar
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -25px 0px"
+    });
+
+    revealElements.forEach(function (element, index) {
+      element.style.transitionDelay = (index % 3) * 100 + "ms";
+      observer.observe(element);
+    });
+  } else {
+    revealElements.forEach(function (element) {
+      element.classList.add("visible");
+    });
+  }
+
+  // Penanda menu aktif
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = navMenu.querySelectorAll('a[href^="#"]');
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (link) {
+            const active =
+              link.getAttribute("href") === "#" + entry.target.id;
+
+            link.classList.toggle("active", active);
+          });
+        }
+      });
+    }, {
+      rootMargin: "-25% 0px -60% 0px"
+    });
+
+    sections.forEach(function (section) {
+      sectionObserver.observe(section);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
